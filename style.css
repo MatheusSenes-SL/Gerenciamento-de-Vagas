@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .parkin_corpo {
+        flex-direction: column;
+        /* menu em cima, conteúdo embaixo */
+    }
+
+    .menu {
+        width: 100%;
+        height: auto;
+    }
+
+    .parkin_main_inicio {
+        width: 100%;
+    }
+}
+
+.parkin_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eee;
+    /* cor do header (clara, diferente da logo) */
+    height: 60px;
+}
+
+/* Logo no header */
+.header_logo {
+    background: black;
+    /* mesma cor da sidebar */
+    width: 20%;
+    /* mesma largura da sidebar */
+    height: 100%;
+    /* ocupa toda a altura do header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logo h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header_logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Título central */
+.header_title {
+    flex: 1;
+    /* ocupa o espaço restante entre logo e ícone */
+    text-align: center;
+}
+
+.header_title h2 {
+    text-align: left;
+    padding: 20px;
+}
+
+/* Ícone de usuário no canto */
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.user-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.parkin_corpo {
+    display: flex;
+    height: calc(100vh - 120px);
+    /* 100% da altura da tela menos header e footer */
+}
+
+.menu {
+    flex: 0 0 20%;
+    /* ocupa 20% fixo */
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+.menu ul {
+    color: white;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu li {
+    padding: 15px 30px 15px 30px;
+    margin: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.parkin_main_inicio {
+    flex: 1;
+    /* ocupa o resto */
+    background: rgb(255, 172, 172);
+    padding: 20px;
+    overflow-y: auto;
+    /* se o conteúdo crescer, vira scroll */
+}
+
+.mutaveis {
+    display: flex;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.mutaveis section {
+    display: block;
+    border-radius: 7px;
+}
+.no_importante{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.vagas_totais {
+    background-color: rgb(140, 140, 236);
+    border: 2px solid;
+    border-color: rgb(11, 66, 144);
+    padding: 10px 10px;
+    margin: 5px;
+}
+
+.vagas_disponiveis {
+    background-color: rgb(134, 229, 142);
+    border: 2px solid;
+    border-color: rgb(14, 129, 68);
+    padding: 10px 10px;
+    margin: 5px;
+
+}
+
+.vagas_ocupadas {
+    background-color: rgb(236, 149, 149);
+    border: 2px solid;
+    border-color:rgb(217, 20, 35);
+    padding: 10px 10px;
+    margin: 5px;
+}
+
+.vagas_taxa_ocupada {
+    background-color: rgb(221, 153, 235);
+    border: 2px solid;
+    border-color:rgb(122, 17, 134);
+    padding: 10px 10px;
+    margin: 5px;
+}
+
+.parkin_footer {
+    background-color: rgb(105, 105, 105);
+    padding: 10px;
+    text-align: center;
+    height: calc(100vh - 120px);
+}
