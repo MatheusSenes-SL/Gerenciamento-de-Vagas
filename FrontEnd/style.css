@@ -1,0 +1,276 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CONFIGURAÇÃO GLOBAL ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #fafafa;
+}
+
+/* ===== HEADER ===== */
+.parkin_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== LOGO ===== */
+.header_logo {
+    position: relative;
+    /* necessário para a linha branca */
+    background: black;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* permite que a linha fique embaixo */
+    padding-bottom: 4px;
+    /* um pequeno respiro antes da linha */
+}
+
+/* Agrupa a imagem e o texto da logo */
+.logo_conteudo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo_img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* deixa branca, se quiser manter tema escuro */
+}
+
+/* Texto da logo */
+.header_logo h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header_logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== LINHA BRANCA SÓ NA LOGO ===== */
+.header_separator {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    height: 0.5px;
+    background-color: white;
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+/* ===== TÍTULO ===== */
+.header_title {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.header_title h2 {
+    font-weight: normal;
+}
+
+/* ===== ÍCONE DE USUÁRIO ===== */
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.user-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.user-icon img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== CORPO PRINCIPAL ===== */
+.parkin_corpo {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+/* ===== MENU LATERAL ===== */
+.menu {
+    flex: 0 0 20%;
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #333;
+}
+
+
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.parkin_main_inicio {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ===== BOXES DE INFORMAÇÃO ===== */
+.conjunto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Agrupamentos */
+.mutaveis,
+.outros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Base comum para todos os boxes */
+.box-vagas {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+/* Específicos por tipo */
+.vagas_totais {
+    background-color: rgb(140, 140, 236);
+    border-color: rgb(11, 66, 144);
+}
+
+.vagas_disponiveis {
+    background-color: rgb(134, 229, 142);
+    border-color: rgb(14, 129, 68);
+}
+
+.vagas_ocupadas {
+    background-color: rgb(236, 149, 149);
+    border-color: rgb(217, 20, 35);
+}
+
+.vagas_taxa_ocupada {
+    background-color: rgb(221, 153, 235);
+    border-color: rgb(122, 17, 134);
+}
+
+.clientes,
+.t_preco,
+.vagas_manutencao {
+    background-color: white;
+    border-color: rgb(136, 136, 136);
+}
+
+.clientes p,
+.t_preco p,
+.vagas_manutencao p {
+    opacity: 80%;
+}
+
+.clientes h3 {
+    color: rgb(93, 93, 248);
+}
+
+.t_preco h3 {
+    color: rgb(65, 128, 65);
+}
+
+.vagas_manutencao h3 {
+    color: rgb(255, 199, 94);
+}
+
+/* Destaques de valores */
+.valor {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0px;
+    margin: 10px 0;
+}
+
+/* ===== GRÁFICO ===== */
+.grafico {
+    background-color: white;
+    border: 2px dashed #aaa;
+    border-radius: 7px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* ===== RODAPÉ ===== */
+.parkin_footer {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .parkin_corpo {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu li a {
+        margin: 5px auto;
+    }
+
+    .mutaveis,
+    .outros {
+        flex-direction: column;
+    }
+
+    .box-vagas {
+        width: 100%;
+    }
+}
