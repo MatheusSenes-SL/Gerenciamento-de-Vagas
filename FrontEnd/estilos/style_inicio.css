@@ -1,0 +1,278 @@
+@import url('responsivo.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    color: #222;
+    background-color: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.valor {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p {
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* ===== HEADER ===== */
+.parkin_header {
+    display: flex;
+    width: 100vw;
+    /* ocupa 80% da largura da tela */
+    height: 60px;
+    /* ocupa 50% da altura da tela */
+}
+
+/* ===== LOGO ===== */
+.header_logo {
+    display: flex;
+    background: black;
+    width: 260px;
+    height: 100%;
+    justify-content: center;
+    /* centraliza horizontalmente o conteúdo */
+    align-items: center;
+    /* centraliza verticalmente */
+}
+
+.logo_conteudo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo_img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.header_logo h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== LINHA DECORATIVA ===== */
+.header_separator {
+    height: 1px;
+    background-color: white;
+
+}
+
+/* ===== TÍTULO CENTRAL ===== */
+.header_title {
+    display: flex;
+    flex: 1;
+    width: 1315px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_title h2 {
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+}
+
+/* ===== ÍCONE DE USUÁRIO ===== */
+.user_icon {
+    width: 36px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user_icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.user_icon img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== MENU LATERAL ===== */
+.menu {
+
+    width: 260px;
+    background: black;
+    color: white;
+    padding: 20px 15px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu li a:hover,
+.menu li a.ativo {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.parkin_container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    /* ocupa 80% da largura da tela */
+    height: 70%;
+    /* ocupa 50% da altura da tela */
+}
+
+.parkin_main_inicio {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    background-color: #fefefe;
+}
+
+.info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.info p {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* ===== CONJUNTO DE BLOCOS ===== */
+.conjunto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mutaveis,
+.outros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ===== BOXES ===== */
+.box-vagas {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 220px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.box-vagas:hover {
+    transform: scale(1.02);
+}
+
+/* ===== VARIAÇÕES DE CORES ===== */
+.vagas_totais {
+    background-color: rgb(140, 140, 236);
+    border-color: rgb(11, 66, 144);
+    color: white;
+}
+
+.vagas_disponiveis {
+    background-color: rgb(134, 229, 142);
+    border-color: rgb(14, 129, 68);
+    color: #053b14;
+}
+
+.vagas_ocupadas {
+    background-color: rgb(236, 149, 149);
+    border-color: rgb(217, 20, 35);
+    color: #4b0d0d;
+}
+
+.vagas_taxa_ocupada {
+    background-color: rgb(221, 153, 235);
+    border-color: rgb(122, 17, 134);
+    color: #3f0c4a;
+}
+
+.clientes {
+    border-color: rgb(93, 93, 248);
+}
+
+.t_preco {
+    border-color: rgb(65, 128, 65);
+}
+
+.vagas_manutencao {
+    border-color: rgb(255, 199, 94);
+}
+
+/* ===== GRÁFICO ===== */
+.grafico {
+    background-color: white;
+    border: 2px dashed #aaa;
+    border-radius: 7px;
+    padding: 20px;
+    text-align: center;
+    min-height: 150px;
+}
+
+.grafico_placeholder {
+    height: 100px;
+    background: repeating-linear-gradient(45deg,
+            #f5f5f5,
+            #f5f5f5 10px,
+            #e9e9e9 10px,
+            #e9e9e9 20px);
+    border-radius: 5px;
+}
+
+/* ===== RODAPÉ ===== */
+.parkin_footer {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9rem;
+}

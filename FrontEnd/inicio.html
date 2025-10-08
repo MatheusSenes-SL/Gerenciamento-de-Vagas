@@ -5,97 +5,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tela Inicial - Parkin</title>
-  <link rel="stylesheet" href="estilos/style.css">
-  <script src="javaScript/script.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos/style_inicio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-
-  <div class="parkin-container">
-
-    <!-- ===== CORPO PRINCIPAL ===== -->
-    <div class="parkin_corpo">
-
-      <!-- ===== MENU DE NAVEGAÇÃO ===== -->
-      <nav class="menu" aria-label="Menu principal">
-        <ul>
-          <li><a href="inicio.html"><img src="#" alt="" class="nav_icon">Início</a></li>
-          <li><a href="vagas.html">Vagas</a></li>
-          <li><a href="#">Clientes</a></li>
-          <li><a href="#">Relatórios</a></li>
-          <li><a href="#">Tabela de preços</a></li>
-        </ul>
-      </nav>
-
-      <!-- ===== CONTEÚDO PRINCIPAL ===== -->
-      <main class="parkin_main_inicio">
-
-        <section class="info">
-          <h2>Visão geral do Estacionamento</h2>
-          <p>Acompanhe o status das vagas em tempo real.</p>
-
-          <div class="conjunto">
-
-            <!-- ==== BLOCO DE VAGAS ==== -->
-            <article class="mutaveis">
-              <section class="box-vagas vagas_totais">
-                <h3>Total de Vagas</h3>
-                <span id="vagas_totais" class="valor">0</span>
-                <p>Capacidade total.</p>
-              </section>
-
-              <section class="box-vagas vagas_disponiveis">
-                <h3>Vagas Disponíveis</h3>
-                <span id="vagas_disponiveis" class="valor">0</span>
-                <p>Prontas para uso.</p>
-              </section>
-
-              <section class="box-vagas vagas_ocupadas">
-                <h3>Vagas Ocupadas</h3>
-                <span id="vagas_ocupadas" class="valor">0</span>
-                <p>Em uso atualmente.</p>
-              </section>
-
-              <section class="box-vagas vagas_taxa_ocupada">
-                <h3>Taxa de Ocupação</h3>
-                <span id="taxa_ocupada" class="valor">0%</span>
-                <p>Do total de vagas.</p>
-              </section>
-            </article>
-
-            <!-- ==== BLOCO DE GRÁFICO ==== -->
-            <article class="grafico">
-              <h3>Ocupação</h3>
-              <!-- Aqui futuramente você pode inserir um gráfico -->
-            </article>
-
-            <!-- ==== BLOCO DE OUTROS DADOS ==== -->
-            <article class="outros">
-              <section class="box-vagas clientes">
-                <h3>Clientes Cadastrados</h3>
-                <span id="clientes_total" class="valor">0</span>
-                <p><span id="clientes_mensalistas">0</span> mensalistas.</p>
-              </section>
-
-              <section class="box-vagas t_preco">
-                <h3>Tabelas de Preço</h3>
-                <span id="tabelas_ativas" class="valor">0</span>
-                <p><span id="tabelas_ativas_texto">0</span> ativas.</p>
-              </section>
-
-              <section class="box-vagas vagas_manutencao">
-                <h3>Vagas em Manutenção</h3>
-                <span id="vagas_manutencao" class="valor">0</span>
-                <p>Necessitam de atenção.</p>
-              </section>
-            </article>
-
-          </div>
-        </section>
-
-      </main>
+  <header class="parkin_header">
+    <div class="header_logo">
+      <a href="inicio.html" aria-label="Página inicial">
+        <div class="logo_conteudo">
+          <img src="referencias/logo.png" alt="Logo Parkin" class="logo_img">
+          <h1>Parkin</h1>
+        </div>
+      </a>
     </div>
-  </div>
+    <!-- Linha branca decorativa -->
+    <div class="header_separator" aria-hidden="true"></div>
 
+    <div class="header_title">
+      <h2>Início</h2>
+    </div>
+
+    <div class="user_icon" role="button" tabindex="0" aria-label="Perfil do usuário">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Ícone do usuário">
+    </div>
+  </header>
+
+  <div class="parkin_container">
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="inicio.html" class="ativo"><img src="#" alt="" class="nav_icon">Início</a></li>
+        <li><a href="vagas.html">Vagas</a></li>
+        <li><a href="#">Clientes</a></li>
+        <li><a href="#">Relatórios</a></li>
+        <li><a href="#">Tabela de preços</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="parkin_main_inicio">
+      <section class="info">
+        <h2>Visão Geral do Estacionamento</h2>
+        <p>Acompanhe o status das vagas em tempo real.</p>
+
+        <div class="conjunto">
+          <!-- ==== BLOCO DE VAGAS ==== -->
+          <section class="mutaveis" aria-label="Informações de vagas">
+            <article class="box-vagas vagas_totais">
+              <h3>Total de Vagas</h3>
+              <span id="vagas_totais" class="valor" aria-live="polite">0</span>
+              <p>Capacidade total.</p>
+            </article>
+
+            <article class="box-vagas vagas_disponiveis">
+              <h3>Vagas Disponíveis</h3>
+              <span id="vagas_disponiveis" class="valor" aria-live="polite">0</span>
+              <p>Prontas para uso.</p>
+            </article>
+
+            <article class="box-vagas vagas_ocupadas">
+              <h3>Vagas Ocupadas</h3>
+              <span id="vagas_ocupadas" class="valor" aria-live="polite">0</span>
+              <p>Em uso atualmente.</p>
+            </article>
+
+            <article class="box-vagas vagas_taxa_ocupada">
+              <h3>Taxa de Ocupação</h3>
+              <span id="taxa_ocupada" class="valor" aria-live="polite">0%</span>
+              <p>Do total de vagas.</p>
+            </article>
+          </section>
+
+          <!-- ==== BLOCO DE GRÁFICO ==== -->
+          <section class="grafico" aria-label="Gráfico de ocupação">
+            <h3>Ocupação</h3>
+            <!-- Espaço reservado para o gráfico -->
+            <div class="grafico_placeholder"></div>
+          </section>
+
+          <!-- ==== BLOCO DE OUTROS DADOS ==== -->
+          <section class="outros" aria-label="Outras informações">
+            <article class="box-vagas clientes">
+              <h3>Clientes Cadastrados</h3>
+              <span id="clientes_total" class="valor" aria-live="polite">0</span>
+              <p><span id="clientes_mensalistas">0</span> mensalistas.</p>
+            </article>
+
+            <article class="box-vagas t_preco">
+              <h3>Tabelas de Preço</h3>
+              <span id="tabelas_ativas" class="valor" aria-live="polite">0</span>
+              <p><span id="tabelas_ativas_texto">0</span> ativas.</p>
+            </article>
+
+            <article class="box-vagas vagas_manutencao">
+              <h3>Vagas em Manutenção</h3>
+              <span id="vagas_manutencao" class="valor" aria-live="polite">0</span>
+              <p>Necessitam de atenção.</p>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+  </div>
+      <!-- ===== RODAPÉ ===== -->
+    <footer class="parkin_footer">
+      <p>&copy; 2025 <strong>Parkin</strong> — Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
