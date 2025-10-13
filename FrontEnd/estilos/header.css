@@ -1,3 +1,5 @@
+
+
 /* ===== HEADER ===== */
 .parkin_header {
     display: flex;
@@ -14,7 +16,7 @@
 .header_logo {
     display: flex;
     background: black;
-    width: 260px;
+    width: 271px;
     height: 100%;
     justify-content: center;
     /* centraliza horizontalmente o conteúdo */
@@ -42,8 +44,16 @@
 
 /* ===== LINHA DECORATIVA ===== */
 .header_separator {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    bottom: 1px;
+    width: 260px;
+    /* ocupa 80% da largura da tela */
     height: 1px;
+    /* ocupa 50% da altura da tela */
     background-color: white;
+    left: 0;
 
 }
 
