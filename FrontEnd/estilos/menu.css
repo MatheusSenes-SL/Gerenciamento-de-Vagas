@@ -2,6 +2,7 @@
     font-family: 'Inter', sans-serif;
     font-style: 600;
 }
+
 /* ===== MENU LATERAL ===== */
 .menu {
     width: 271px;
@@ -23,24 +24,40 @@
 
 .menu li a {
     display: flex;
+    align-items: center;
+    /* centraliza verticalmente */
+    gap: 10px;
     width: 208px;
-    /* ocupa 80% da largura da tela */
     height: 49px;
-    /* ocupa 50% da altura da tela */
     color: white;
     border-radius: 5px;
-    border: 0px solid;
+    border: 0;
     transition: background-color 0.3s, transform 0.2s;
+    padding-left: 15px;
 }
+
 .menu li p {
     display: flex;
-    flex: 4;
     font-size: 20px;
+    font-size: 20px;
+    flex-grow: 1;
+    /* texto ocupa o restante do espaço */
 
 }
+
 .menu li img {
-    display: flex;
-    flex: 1;
+    width: 20px;
+    /* novo tamanho menor */
+    height: 20px;
+    margin-right: 10px;
+    /* espaço entre ícone e texto */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu li a:hover img,
+.menu li a.ativo img {
+    filter: invert(100%);
+    transition: filter 0.3s ease; /* suaviza a transição */
 }
 
 .menu li a:hover,
