@@ -41,11 +41,21 @@
     <!-- ===== MENU DE NAVEGAÇÃO ===== -->
     <nav class="menu" aria-label="Menu principal">
       <ul>
-        <li><a href="inicio.html" class="ativo"><img src="referencias/menu_home.png" alt="" class="nav_icon_ativo"><p>Início</p></a></li>
-        <li><a href="#"><img src="referencias/menu_vagas.png" alt="" class="nav_icon"><p>Vagas</p></a></li>
-        <li><a href="#"><img src="referencias/menu_clientes.png" alt="" class="nav_icon"><p>Clientes</p></a></li>
-        <li><a href="#"><img src="referencias/menu_relatorios.png" alt="" class="nav_icon"><p>Relatórios</p></a></li>
-        <li><a href="#"><img src="referencias/menu_Tpreco.png" alt="" class="nav_icon"><p>Tabela de preços</p></a></li>
+        <li><a href="inicio.html" class="ativo"><img src="referencias/menu_home.png" alt="" class="nav_icon_ativo">
+            <p>Início</p>
+          </a></li>
+        <li><a href="vagas.html"><img src="referencias/menu_vagas.png" alt="" class="nav_icon">
+            <p>Vagas</p>
+          </a></li>
+        <li><a href="#"><img src="referencias/menu_clientes.png" alt="" class="nav_icon">
+            <p>Clientes</p>
+          </a></li>
+        <li><a href="#"><img src="referencias/menu_relatorios.png" alt="" class="nav_icon">
+            <p>Relatórios</p>
+          </a></li>
+        <li><a href="#"><img src="referencias/menu_Tpreco.png" alt="" class="nav_icon">
+            <p>Tabela de preços</p>
+          </a></li>
       </ul>
     </nav>
 
@@ -85,9 +95,51 @@
 
           <!-- ==== BLOCO DE GRÁFICO ==== -->
           <section class="grafico" aria-label="Gráfico de ocupação">
-            <h3>Ocupação</h3>
             <!-- Espaço reservado para o gráfico -->
-            <div class="grafico_placeholder"></div>
+            <div class="grafico_placeholder">
+              <div class="grafico_titulo">Ocupação por Setor</div>
+              <div class="grafico_container">
+                <div class="eixo_y">
+                  <div class="y_label">30</div>
+                  <div class="y_label">25</div>
+                  <div class="y_label">20</div>
+                  <div class="y_label">15</div>
+                  <div class="y_label">10</div>
+                  <div class="y_label invisivel">5</div>
+                  <div class="y_label invisivel">0</div>
+                </div>
+
+                <div class="barras_container">
+                  <div class="grid_y">
+                    <div class="linha_grid"></div>
+                    <div class="linha_grid"></div>
+                    <div class="linha_grid"></div>
+                    <div class="linha_grid"></div>
+                    <div class="linha_grid"></div>
+                  </div>
+
+                  <div class="grupo_barras" data-label="Setor A1">
+                    <div class="barra cor_vermelha" style="height: 63.33%;"></div>
+                    <div class="barra cor_verde" style="height: 63.33%;"></div>
+                  </div>
+
+                  <div class="grupo_barras" data-label="Setor B1">
+                    <div class="barra cor_vermelha" style="height: 40%;"></div>
+                    <div class="barra cor_verde" style="height: 66.67%;"></div>
+                  </div>
+
+                  <div class="grupo_barras" data-label="Setor C1">
+                    <div class="barra cor_vermelha" style="height: 83.33%;"></div>
+                    <div class="barra cor_verde" style="height: 93.33%;"></div>
+                  </div>
+
+                  <div class="grupo_barras" data-label="Setor D1">
+                    <div class="barra cor_vermelha" style="height: 66.67%;"></div>
+                    <div class="barra cor_verde" style="height: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           <!-- ==== BLOCO DE OUTROS DADOS ==== -->
@@ -115,10 +167,10 @@
     </main>
 
   </div>
-      <!-- ===== RODAPÉ ===== -->
-    <footer class="parkin_footer">
-      <p>&copy; 2025 <strong>Parkin</strong> — Todos os direitos reservados.</p>
-    </footer>
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="parkin_footer">
+    <p>&copy; 2025 <strong>Parkin</strong> — Todos os direitos reservados.</p>
+  </footer>
 </body>
 
 </html>
