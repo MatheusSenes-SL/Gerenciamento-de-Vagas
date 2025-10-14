@@ -1,0 +1,279 @@
+@import url('header.css');
+@import url('menu.css');
+@import url('global.css');
+@import url('responsivo.css');
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.parkin_container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.parkin_main_inicio {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    background-color: #fefefe;
+}
+
+.info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.info p {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* ===== CONJUNTO DE BLOCOS ===== */
+.conjunto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mutaveis,
+.outros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ===== BOXES ===== */
+.box-vagas {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 220px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.box-vagas:hover {
+    transform: scale(1.02);
+}
+
+/* ===== VARIAÇÕES DE CORES ===== */
+.vagas_totais {
+    background-color: rgb(140, 140, 236);
+    border-color: rgb(11, 66, 144);
+    color: white;
+}
+
+.vagas_disponiveis {
+    background-color: rgb(134, 229, 142);
+    border-color: rgb(14, 129, 68);
+    color: #053b14;
+}
+
+.vagas_ocupadas {
+    background-color: rgb(236, 149, 149);
+    border-color: rgb(217, 20, 35);
+    color: #4b0d0d;
+}
+
+.vagas_taxa_ocupada {
+    background-color: rgb(221, 153, 235);
+    border-color: rgb(122, 17, 134);
+    color: #3f0c4a;
+}
+
+.clientes {
+    border-color: rgb(93, 93, 248);
+}
+
+.t_preco {
+    border-color: rgb(65, 128, 65);
+}
+
+.vagas_manutencao {
+    border-color: rgb(255, 199, 94);
+}
+
+/* ===== GRÁFICO (Seu CSS Modificado) ===== */
+.grafico {
+    background-color: white;
+    /* Removido o dashed para um visual mais limpo como na imagem, mas você pode reativar */
+    /* border: 2px dashed #aaa; */
+    border: 1px solid #e0e0e0;
+    /* Borda sutil como na referência */
+    border-radius: 7px;
+    padding: 20px;
+    /* Removido text-align: center; para alinhar o gráfico */
+    min-height: 150px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destacar */
+}
+
+/* Título 'Ocupação' dado no HTML da seção */
+.grafico h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Contêiner principal do gráfico - Onde o placeholder vai */
+.grafico_placeholder {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 600px;  Defina uma largura máxima se desejar */
+    margin: 0 auto;
+}
+
+/* Título dentro do gráfico (Ocupação por Setor) */
+.grafico_titulo {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    padding-bottom: 23px;
+    margin-bottom: 20px;
+}
+
+/* Contêiner do Eixo Y + Barras */
+.grafico_container {
+    display: flex;
+    height: 250px;
+    /* Altura fixa para o gráfico (ajuste conforme necessário) */
+    position: relative;
+    padding-bottom: 30px;
+    /* Espaço para os rótulos do eixo X */
+}
+
+/* Eixo Y (Rótulos dos valores) */
+.eixo_y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+    font-size: 0.8em;
+    color: #666;
+    text-align: right;
+    width: 30px;
+    /* Largura fixa para os rótulos */
+    z-index: 2;
+    /* Para garantir que os rótulos fiquem acima das linhas */
+}
+
+.y_label {
+    height: calc(100% / 5);
+    /* 5 divisões visíveis (10 a 30) */
+    display: flex;
+    align-items: flex-start;
+    /* Alinha os rótulos no topo de sua área */
+    transform: translateY(-50%);
+    /* Ajusta a posição do rótulo para a linha */
+}
+
+.y_label:last-of-type {
+    /* Rótulo 10 */
+    align-items: center;
+    /* Alinha o 10 ao centro para a linha */
+}
+
+.y_label.invisivel {
+    display: none;
+    /* Oculta rótulos de 5 e 0, mas mantendo o espaçamento se fossem visíveis */
+}
+
+
+/* Contêiner das Barras e Grid */
+.barras_container {
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    padding-left: 5px;
+    align-items: flex-end;
+    /* Alinha as barras na parte inferior */
+    height: 100%;
+}
+
+/* Linhas de Referência (Grid Y) */
+.grid_y {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0;
+    /* Começa do topo */
+    padding-bottom: 0;
+    /* Termina no rodapé */
+}
+
+.linha_grid {
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.linha_grid:last-child {
+    border-top: none;
+    /* Remove a linha superior, pois o topo é 30 */
+}
+
+/* Grupos de Barras */
+.grupo_barras {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 18%;
+    /* Ajusta a largura do grupo para espaçamento */
+    position: relative;
+    margin: 0 5px;
+}
+
+/* Rótulos do Eixo X (Setores) usando o atributo data-label */
+.grupo_barras::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Estilo Individual das Barras */
+.barra {
+    width: 45%;
+    /* Metade da largura do grupo de barras */
+    min-height: 1px;
+    /* Garante que a barra apareça mesmo com altura baixa */
+    border-radius: 3px 3px 0 0;
+    transition: height 0.3s ease;
+    /* Transição suave para quando os dados mudarem */
+}
+
+/* Cores das Barras */
+.cor_vermelha {
+    background-color: #f75c6c;
+    /* Tom de vermelho da imagem */
+    margin-right: 10%;
+    /* Espaçamento entre as barras dentro do grupo */
+}
+
+.cor_verde {
+    background-color: #55c48b;
+    /* Tom de verde da imagem */
+}
+
+/* ===== RODAPÉ ===== */
+.parkin_footer {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9rem;
+}

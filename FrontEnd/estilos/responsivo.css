@@ -1,0 +1,53 @@
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    .parkin_container {
+        flex-direction: column;
+    }
+
+    .menu {
+        display: flex;
+        width: 100vw;
+    }
+
+    .menu ul {
+        position: static; /* <-- Garante que não há posição absoluta no mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; 
+        gap: 5px;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+        padding-top: 40px;
+        padding-bottom: 10px;
+    }
+
+    .menu li a {
+        margin: 0px auto;
+        border: none;
+        border-bottom: 1px solid #888;
+    }
+
+    .mutaveis,
+    .outros {
+        flex-direction: column;
+    }
+
+    .box-vagas {
+        width: 100%;
+    }
+    .header_title {
+        flex: 6;
+    }
+    .header_title h2 {
+        font-size: 1.2rem;
+    }
+    .user_icon p {
+        display: none; /* Faz o elemento desaparecer do layout e não ocupar espaço */
+    }
+    .parkin_main_inicio {
+        width: 100%;
+        padding: 15px;
+    }
+}
