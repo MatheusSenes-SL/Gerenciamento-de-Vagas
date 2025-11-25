@@ -43,7 +43,6 @@ const App = () => {
   });
 
   useEffect(() => {
-    console.log(selectedFilter);
     getAllSpaces().then(
       (result) => {
         if (result.left) {
