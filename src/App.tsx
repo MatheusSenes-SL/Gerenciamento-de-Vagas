@@ -47,26 +47,6 @@ const App = () => {
   });
 
   useEffect(() => {
-    const onSocketMessage = (message: MessageEvent) => {
-      const event = JSON.parse(message.data) as SpaceSocketMessage;
-
-      console.log("Received a message from the server: ", event);
-
-      switch (event.type) {
-        case "SPACE_UPDATED":
-          setSpacesData((prevSpaces) => {
-            
-            console.log(
-              "The space that got updated exists in the index: ",
-              spaceIndex,
-            );
-
-            return prevSpaces;
-          });
-          break;
-      }
-    };
-
     const setupSpaces = async () => {
       const result = await getAllSpaces();
 
@@ -79,15 +59,16 @@ const App = () => {
       }
 
       setSpacesData(result.right!);
-
-      socket.addEventListener("message", onSocketMessage);
     };
 
-    setupSpaces().catch((error) => console.error(error));
+    const interval = setInterval(() => {
+      setupSpaces().catch((error) => console.error(error));
+    }, 5000);
 
+    setupSpaces().catch((error) => console.error(error));
     return () => {
       console.log("App component unmounted");
-      socket.removeEventListener("message", onSocketMessage);
+      clearInterval(interval);
     };
   }, [socket]);
 
