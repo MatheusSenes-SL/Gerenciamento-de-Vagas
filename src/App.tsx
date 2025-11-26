@@ -9,6 +9,8 @@ import { getAllSpaces } from "./services/space";
 import { type Space } from "./services/space/Space";
 import { SpaceCard } from "./components/cards/space";
 import { AnalyticsCards } from "./components/cards/analytics";
+import { useSocket } from "./context/socket/context";
+import type { SpaceSocketMessage } from "./types/SpaceMessage";
 
 enum SearchFilterOptions {
   NONE = -1,
@@ -18,6 +20,8 @@ enum SearchFilterOptions {
 }
 
 const App = () => {
+  const socket = useSocket();
+
   const [searchText, setSearchText] = useState<string>("");
   const [selectedFilter, setSelectedFilter] = useState<number>(-1);
 
@@ -43,19 +47,49 @@ const App = () => {
   });
 
   useEffect(() => {
-    getAllSpaces().then(
-      (result) => {
-        if (result.left) {
-          return console.error(result.left);
+    const onSocketMessage = (message: MessageEvent) => {
+      const event = JSON.parse(message.data) as SpaceSocketMessage;
+
+      console.log("Received a message from the server: ", event);
+
+      switch (event.type) {
+        case "SPACE_UPDATED":
+          setSpacesData((prevSpaces) => {
+            
+            console.log(
+              "The space that got updated exists in the index: ",
+              spaceIndex,
+            );
+
+            return prevSpaces;
+          });
+          break;
+      }
+    };
+
+    const setupSpaces = async () => {
+      const result = await getAllSpaces();
+
+      if (result.left) {
+        if (result.left.code === "SPACE_NOT_FOUND") {
+          return console.log("Nenhuma vaga foi registrada no momento.");
         }
 
-        setSpacesData(result.right);
-      },
-      (error) => {
-        console.error(error);
-      },
-    );
-  });
+        return console.error(result.left);
+      }
+
+      setSpacesData(result.right!);
+
+      socket.addEventListener("message", onSocketMessage);
+    };
+
+    setupSpaces().catch((error) => console.error(error));
+
+    return () => {
+      console.log("App component unmounted");
+      socket.removeEventListener("message", onSocketMessage);
+    };
+  }, [socket]);
 
   return (
     <div className="page-container">

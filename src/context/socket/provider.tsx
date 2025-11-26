@@ -12,24 +12,29 @@ export const SocketProvider = ({ address, children }: SocketProviderProps) => {
   useEffect(() => {
     console.log("Connecting WebSocket, provider mounted");
 
-    socket.onopen = () => {
-      console.log("WebSocket connected");
+    const handleOnOpen = () => {
+      console.log("Socket connected");
+      socket.send("Hello, server!");
     };
 
-    socket.onerror = (err) => {
-      console.log("WebSocket error:", err);
+    const handleOnClose = () => {
+      console.log("Socket disconnected");
     };
 
-    socket.onclose = () => {
-      console.log("WebSocket closed");
-    };
-
-    setTimeout(() => {
-      console.log("Is socket connected? " + (socket.readyState === WebSocket.OPEN));
-    }, 4000);
+    /**
+     * By default, the server will always send a json as the message payload.
+     * So we expect the message to be a json string, otherwise a exception will be thrown.
+     */
+    socket.addEventListener("open", handleOnOpen);
+    socket.addEventListener("close", handleOnClose);
 
     return () => {
       console.log("Disconnecting WebSocket, provider unmounted");
+
+      socket.removeEventListener("open", handleOnOpen);
+      socket.removeEventListener("close", handleOnClose);
+      socket.removeEventListener("message", handleOnMessage);
+
       socket.close();
     };
   }, [socket]);

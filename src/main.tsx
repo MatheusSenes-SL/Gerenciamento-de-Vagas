@@ -8,9 +8,7 @@ import App from "./App";
 import "./styles/global.css";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <SocketProvider address="ws://localhost:3000">
-      <App />
-    </SocketProvider>
-  </StrictMode>,
+  <SocketProvider address="ws://localhost:3000">
+    <App />
+  </SocketProvider>,
 );
